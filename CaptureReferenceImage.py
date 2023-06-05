@@ -28,8 +28,7 @@ model.setInputParams(size=(416, 416), scale=1/255, swapRB=True)
 
 
 def ObjectDetector(image):
-    classes, scores, boxes = model.detect(
-        image, CONFIDENCE_THRESHOLD, NMS_THRESHOLD)
+    classes, scores, boxes = model.detect(cimage, CONFIDENCE_THRESHOLD, NMS_THRESHOLD)
 
     for (classid, score, box) in zip(classes, scores, boxes):
         color = COLORS[int(classid) % len(COLORS)]

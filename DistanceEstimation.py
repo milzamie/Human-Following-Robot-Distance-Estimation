@@ -38,7 +38,6 @@ def object_detector(image):
     for (classid, score, box) in zip(classes, scores, boxes):
         # define color of each, object based on its class id 
         color= COLORS[int(classid) % len(COLORS)]
-    
         label = "%s : %f" % (class_names[classid[0]], score)
 
         # draw rectangle on and label on object
